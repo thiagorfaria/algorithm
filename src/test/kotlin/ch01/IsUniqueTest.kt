@@ -3,7 +3,7 @@ package ch01
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 
-class ArraysAndStringTest : StringSpec({
+class IsUniqueTest : StringSpec({
 
     "is Unique" {
         isUniqueChars("abcdefg") shouldBe true
