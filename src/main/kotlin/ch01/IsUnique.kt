@@ -4,7 +4,7 @@ fun isUniqueChars(text: String): Boolean {
 
     // Complexity O(n) and time space complexity is O(1)
     val temp: LinkedHashSet<Char> = linkedSetOf()
-    text.forEach { s -> temp.add(s) }
+    text.forEach { temp.add(it) }
 
     return text.length == temp.size
 }
@@ -26,6 +26,8 @@ fun isUniqueChars2(text: String): Boolean {
     return true
 }
 
+
+// TODO look again !!
 internal fun isUniqueChars3(str: String): Boolean {
     var checker = 0
     for (i in 0 until str.length) {
