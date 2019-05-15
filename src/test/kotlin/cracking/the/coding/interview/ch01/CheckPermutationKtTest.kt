@@ -1,4 +1,4 @@
-package ch01
+package cracking.the.coding.interview.ch01
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec

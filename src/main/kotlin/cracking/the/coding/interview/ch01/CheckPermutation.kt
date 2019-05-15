@@ -1,4 +1,4 @@
-package ch01
+package cracking.the.coding.interview.ch01
 
 import java.util.*
 
