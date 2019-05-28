@@ -1,19 +1,26 @@
 package daily.coding.problem
 
+import io.kotlintest.data.forall
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
+import io.kotlintest.tables.row
 
 class Problem001KtTest : StringSpec({
 
-    "Test problem 001 May 2019" {
-        problem001(intArrayOf(10, 15, 3, 7), 25) shouldBe true
-        problem001(intArrayOf(10, 15, 3, 7), 13) shouldBe true
-        problem001(intArrayOf(10, 15, 3, 7), 17) shouldBe true
-        problem001(intArrayOf(10, 15, 3, 7), 18) shouldBe true
-        problem001(intArrayOf(10, 15, 3, 7), 22) shouldBe true
-        problem001(intArrayOf(10, 15, 3, 7), 10) shouldBe true
+    val numbers = intArrayOf(10, 15, 3, 7)
 
-        problem001(intArrayOf(10, 15, 3, 7), 20) shouldBe false
+    "should return whether any two numbers from the list add up to k" {
+        forall(row(25), row(13), row(17), row(18), row(22), row(10)) {
+            problem001Solution01(numbers, it) shouldBe true
+            problem001Solution01(numbers, it) shouldBe true
+            problem001Solution03(numbers, it) shouldBe true
+        }
+    }
+
+    "cannot return when two numbers from the list not add up to k" {
+        problem001Solution01(numbers, 20) shouldBe false
+        problem001Solution02(numbers, 20) shouldBe false
+        problem001Solution03(numbers, 20) shouldBe false
 
     }
 })

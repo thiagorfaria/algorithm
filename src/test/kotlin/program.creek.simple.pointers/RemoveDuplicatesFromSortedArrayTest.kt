@@ -1,8 +1,7 @@
-package br.com.trf.algorithm.program.creek.simple.pointers
+package program.creek.simple.pointers
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
-
 
 class RemoveDuplicatesFromSortedArrayTest : StringSpec({
 

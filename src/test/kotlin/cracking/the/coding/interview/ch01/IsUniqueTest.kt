@@ -1,37 +1,25 @@
 package cracking.the.coding.interview.ch01
 
+import io.kotlintest.data.forall
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
+import io.kotlintest.tables.row
 
 class IsUniqueTest : StringSpec({
 
-    "is Unique" {
-        isUniqueChars("abcdefg") shouldBe true
-        isUniqueChars("abcaacg") shouldBe false
+    "should check is unique" {
+        val charsUnique = "abcdefg"
+
+        isUniqueChars(charsUnique) shouldBe true
+        isUniqueChars2(charsUnique) shouldBe true
+        isUniqueChars3(charsUnique) shouldBe true
     }
 
-    "is Unique 2" {
-        val sb = StringBuilder()
-        repeat(128) {
-            sb.append("a")
+    "cannot check is unique when chars is not unique." {
+        forall(row("a".repeat(128)), row("abcaacg")) {
+            isUniqueChars(it) shouldBe false
+            isUniqueChars2(it) shouldBe false
+            isUniqueChars3(it) shouldBe false
         }
-
-        isUniqueChars2("abcdefg") shouldBe true
-        isUniqueChars2("abcaacg") shouldBe false
-
-        isUniqueChars2(sb.toString()) shouldBe false
     }
-
-    "is Unique 3" {
-        val sb = StringBuilder()
-        repeat(128) {
-            sb.append("a")
-        }
-
-        isUniqueChars3("abcdefg") shouldBe true
-        isUniqueChars3("abcaacg") shouldBe false
-
-        isUniqueChars3(sb.toString()) shouldBe false
-    }
-
 })

@@ -1,4 +1,4 @@
-package br.com.trf.algorithm.program.creek.simple.pointers
+package program.creek.simple.pointers
 
 /**
  * https://www.programcreek.com/2013/01/leetcode-remove-duplicates-from-sorted-array-java/

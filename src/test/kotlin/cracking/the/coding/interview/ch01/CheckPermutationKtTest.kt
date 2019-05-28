@@ -1,24 +1,26 @@
 package cracking.the.coding.interview.ch01
 
+import io.kotlintest.data.forall
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
+import io.kotlintest.tables.row
 
 class CheckPermutationKtTest : StringSpec({
 
-    "Check Permutation" {
-        checkPermutation("god", "dog") shouldBe  true
-        checkPermutation("arrays", "rysara") shouldBe true
-
-        checkPermutation("go", "dog") shouldBe false
-        checkPermutation("god", "dot") shouldBe false
+    "should check permutation" {
+        forall(row("god", "dog"), row("arrays", "rysara")) {
+            text, text2 ->
+                checkPermutation(text, text2) shouldBe true
+                checkPermutation2(text, text2) shouldBe true
+        }
     }
 
-    "Check Permutation 2" {
-        checkPermutation2("god", "dog") shouldBe  true
-        checkPermutation2("arrays", "rysara") shouldBe true
-
-        checkPermutation2("go", "dog") shouldBe false
-        checkPermutation2("god", "dot") shouldBe false
+    "cannot check permutation when texts do not match" {
+        forall(row("go", "dog"), row("god", "dot")) {
+                text, text2 ->
+                    checkPermutation(text, text2) shouldBe false
+                    checkPermutation2(text, text2) shouldBe false
+        }
     }
 
 })

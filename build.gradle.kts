@@ -15,7 +15,6 @@ val test by tasks.getting(Test::class) {
     useJUnitPlatform { }
 }
 
-
 dependencies {
     compile(kotlin("stdlib-jdk8"))
 

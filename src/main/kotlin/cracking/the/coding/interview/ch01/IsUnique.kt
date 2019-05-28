@@ -1,6 +1,7 @@
 package cracking.the.coding.interview.ch01
 
 fun isUniqueChars(text: String): Boolean {
+    if (text.length > 128) return false
 
     // Complexity O(n) and time space complexity is O(1)
     val temp: LinkedHashSet<Char> = linkedSetOf()
