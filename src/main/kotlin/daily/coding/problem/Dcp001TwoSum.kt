@@ -3,11 +3,12 @@ package daily.coding.problem
 import utils.binarySearch
 
 /**
- * Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
  *
- * For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+ * This problem can be solved in several different ways.
+ *
+ * Brute force way would involve a nested iteration to check for every pair of numbers:
  */
-fun problem001Solution01(numbers: IntArray, k: Int) : Boolean {
+fun twoSumSolution01(numbers: IntArray, k: Int): Boolean {
 
     // time complexity is O((n-1)^2)
     for (i in 0 until (numbers.size - 1))
@@ -18,7 +19,12 @@ fun problem001Solution01(numbers: IntArray, k: Int) : Boolean {
     return false
 }
 
-fun problem001Solution02(numbers: IntArray, k: Int) : Boolean {
+/**
+ * This would take O(N2). Another way is to use a set to remember the numbers we've seen so far. Then for a given
+ * number, we can check if there is another number that, if added, would sum to k. This would be O(N) since lookups of
+ * sets are O(1) each.
+ */
+fun twoSumSolution02(numbers: IntArray, k: Int): Boolean {
 
     // space complexity is O(1)
     val seen = hashSetOf<Int>()
@@ -33,7 +39,11 @@ fun problem001Solution02(numbers: IntArray, k: Int) : Boolean {
     return false
 }
 
-fun problem001Solution03(numbers: IntArray, k: Int) : Boolean {
+/**
+ * Yet another solution involves sorting the list. We can then iterate through the list and run a binary search on K -
+ * numbers[i]. Since we run binary search on N elements, this would take O(N log N) with O(1) space.
+ */
+fun twoSumSolution03(numbers: IntArray, k: Int): Boolean {
 
     numbers.sort()
 
@@ -41,7 +51,7 @@ fun problem001Solution03(numbers: IntArray, k: Int) : Boolean {
     iterateNumbers@ for (i in 0 until (numbers.size - 1)) {
         val target = k - numbers[i]
 
-        // time complexity is O(N log N)
+        // time complexity is O(n log n)
         // space complexity is O(1)
         val j = binarySearch(numbers, target)
 

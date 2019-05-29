@@ -1,6 +1,6 @@
 package cracking.the.coding.interview.ch01
 
-import java.util.*
+import java.util.Arrays
 
 fun checkPermutation(text: String, text2: String): Boolean {
 

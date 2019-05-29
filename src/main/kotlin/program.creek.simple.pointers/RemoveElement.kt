@@ -24,7 +24,7 @@ fun removeElement(numbers: IntArray, elem: Int): IntArray {
     return numbers.copyOf(removed)
 }
 
-fun removeElement2(numbers: IntArray, elem: Int): IntArray {
+fun removeElementWithLambdaExpression(numbers: IntArray, elem: Int): IntArray {
 
     // Complexity of space 2 x O(n)
     return  numbers.filter { it != elem }.toIntArray()
