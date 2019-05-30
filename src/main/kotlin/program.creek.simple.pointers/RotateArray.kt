@@ -2,7 +2,10 @@ package program.creek.simple.pointers
 
 import utils.reverse
 
+
 /**
+ * https://www.programcreek.com/2015/03/rotate-array-in-java/
+ *
  * In a straightforward way, we can create a new array and then copy elements to the new array. Then change the
  * original array by using System.arraycopy().
  */
@@ -66,4 +69,3 @@ fun reversalRotateArray(numbers: IntArray, k: Int) {
     numbers.reverse(a, numbers.size - 1)
     numbers.reverse(0, numbers.size - 1)
 }
-
