@@ -1,6 +1,6 @@
 package daily.coding.problem
 
-import utils.binarySearch
+import extention.binarySearch
 
 /**
  *
@@ -53,7 +53,7 @@ fun twoSumSolution03(numbers: IntArray, k: Int): Boolean {
 
         // time complexity is O(n log n)
         // space complexity is O(1)
-        val j = binarySearch(numbers, target)
+        val j = numbers.binarySearch(target)
 
         // Check that binary search found the target and that it's not in the same index
         // as i. If it is in the same index, we can check numbers[i + 1] and numbers[i - 1] to see

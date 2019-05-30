@@ -1,6 +1,6 @@
 package daily.coding.problem
 
-import utils.product
+import extention.product
 
 /**
  * Using division to solve the problem

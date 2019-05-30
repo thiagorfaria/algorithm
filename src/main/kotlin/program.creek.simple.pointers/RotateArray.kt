@@ -1,6 +1,6 @@
 package program.creek.simple.pointers
 
-import utils.reverse
+import extention.reverse
 
 
 /**
@@ -40,7 +40,6 @@ fun bubbleRotateArray(numbers: IntArray, k: Int) {
     var t = k
     if (k > numbers.size)
         t = k % numbers.size
-
 
     // time complexity is O(n*k)
     for (i in 0 until t)
