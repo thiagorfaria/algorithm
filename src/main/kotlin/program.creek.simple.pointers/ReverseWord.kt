@@ -27,13 +27,13 @@ fun reverseWord(s: String): String {
 
     // split to words by space
     // space complexity is O(n)
-    val arr = s.split(" ")
+    val words = s.split(" ")
 
-    var word = ""
+    var result = ""
     // time complexity is O(n)
-    arr.reversed()
+    words.reversed()
         .filter { it != "" }
-        .forEach { word += "$it " }
+        .forEach { result += "$it " }
 
-    return word.dropLast(1)
+    return result.dropLast(1)
 }
