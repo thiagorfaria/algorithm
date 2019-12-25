@@ -1,7 +1,6 @@
 package sort
 
 import io.kotlintest.matchers.collections.shouldContainExactly
-import io.kotlintest.matchers.numerics.shouldBeLessThanOrEqual
 import io.kotlintest.specs.StringSpec
 
 /**
@@ -31,9 +30,16 @@ class InsertSortTest : StringSpec({
         val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
         val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
 
-        val interactions = bruteInsertSort(numbers)
+        insertSort(numbers)
         numbers.toList() shouldContainExactly result
-        interactions shouldBeLessThanOrEqual 18
+    }
+
+    "Should sort array by brute force" {
+        val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
+        val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
+
+        bruteInsertSort(numbers)
+        numbers.toList() shouldContainExactly result
     }
 })
 
