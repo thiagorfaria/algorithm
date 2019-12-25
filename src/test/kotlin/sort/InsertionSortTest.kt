@@ -30,7 +30,7 @@ class InsertionSortTest : StringSpec({
         val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
         val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
 
-        sort(numbers)
+        insertionSort(numbers)
         numbers.toList() shouldContainExactly result
     }
 
@@ -38,7 +38,7 @@ class InsertionSortTest : StringSpec({
         val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
         val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
 
-        bruteSort(numbers)
+        insertionBruteSort(numbers)
         numbers.toList() shouldContainExactly result
     }
 })
