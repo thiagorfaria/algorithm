@@ -1,7 +1,7 @@
 package sort
 
 // Brute force
-fun bruteInsertSort(numbers: IntArray) {
+fun bruteSort(numbers: IntArray) {
 
     for (i in 1 until numbers.size) {
         for (n in 0..i) {
@@ -14,7 +14,7 @@ fun bruteInsertSort(numbers: IntArray) {
     }
 }
 
-fun insertSort(numbers: IntArray) {
+fun sort(numbers: IntArray) {
     for (i in 1 until numbers.size) {
         swap(numbers, i)
     }
@@ -33,9 +33,9 @@ fun swap(numbers: IntArray, index: Int) {
 
 
 fun main() {
-    bruteInsertSort(intArrayOf(3, 7, 4, 9, 5, 2, 6, 1))
+    bruteSort(intArrayOf(3, 7, 4, 9, 5, 2, 6, 1))
 
     val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
-    println(insertSort(numbers))
+    println(sort(numbers))
     println(numbers.toList())
 }

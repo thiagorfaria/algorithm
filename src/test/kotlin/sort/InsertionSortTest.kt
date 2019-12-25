@@ -24,13 +24,13 @@ import io.kotlintest.specs.StringSpec
  * Average performance	        О(n2)   comparisons and swaps
  * Worst-case space complexity	О(n)    total,          O(1) auxiliary
  */
-class InsertSortTest : StringSpec({
+class InsertionSortTest : StringSpec({
 
     "Should sort array" {
         val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
         val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
 
-        insertSort(numbers)
+        sort(numbers)
         numbers.toList() shouldContainExactly result
     }
 
@@ -38,7 +38,7 @@ class InsertSortTest : StringSpec({
         val numbers = intArrayOf(3, 7, 4, 9, 5, 2, 6, 1)
         val result = listOf(1, 2, 3, 4, 5, 6, 7, 9)
 
-        bruteInsertSort(numbers)
+        bruteSort(numbers)
         numbers.toList() shouldContainExactly result
     }
 })
