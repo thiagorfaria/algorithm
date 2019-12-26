@@ -37,18 +37,34 @@ fun IntArray.reverse(startIndex: Int, endIndex: Int) {
 
     if (this.size > 1)
         while (l < r) {
-            val temp = this[l]
-            this[l] = this[r]
-            this[r] = temp
+            this.swap(l, r)
             l++
             r--
         }
 }
 
+/**
+ * Swap elements in the array from index to index.
+ *
+ * @param fromIndex from index must be great or equals to zero.
+ * @param toIndex to index must be great or equals to zero.
+ */
 fun IntArray.swap(fromIndex: Int, toIndex: Int) {
-    if (fromIndex != toIndex) {
+    if (fromIndex >= 0 && toIndex >= 0 && fromIndex != toIndex) {
         val temp = this[fromIndex]
         this[fromIndex] = this[toIndex]
         this[toIndex] = temp
     }
+}
+
+/**
+ * Return maximum value.
+ */
+fun IntArray.maximum(): Int {
+    var maximum = if (this.isNotEmpty()) this[0] else 0
+
+    for (i in 1 until this.size)
+        if (this[i] > maximum) maximum = this[i]
+
+    return maximum
 }
