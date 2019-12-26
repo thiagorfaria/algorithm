@@ -1,14 +1,14 @@
 package sort
 
+import extention.swap
+
 // Brute force
 fun insertionBruteSort(numbers: IntArray) {
 
     for (i in 1 until numbers.size) {
         for (n in 0..i) {
             if (numbers[n] > numbers[i]) {
-                val temp = numbers[n]
-                numbers[n] = numbers[i]
-                numbers[i] = temp
+                numbers.swap(n, i)
             }
         }
     }

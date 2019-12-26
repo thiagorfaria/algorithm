@@ -44,3 +44,11 @@ fun IntArray.reverse(startIndex: Int, endIndex: Int) {
             r--
         }
 }
+
+fun IntArray.swap(fromIndex: Int, toIndex: Int) {
+    if (fromIndex != toIndex) {
+        val temp = this[fromIndex]
+        this[fromIndex] = this[toIndex]
+        this[toIndex] = temp
+    }
+}
