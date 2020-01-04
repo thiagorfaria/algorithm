@@ -1,4 +1,4 @@
-package sort
+package sort.simple
 
 import extention.greatThan
 import extention.swap

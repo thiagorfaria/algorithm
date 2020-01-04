@@ -1,4 +1,4 @@
-package sort
+package sort.bubble
 
 import io.kotlintest.matchers.collections.shouldContainExactly
 import io.kotlintest.shouldBe

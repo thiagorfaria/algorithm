@@ -1,4 +1,4 @@
-package sort
+package sort.simple
 
 import io.kotlintest.matchers.collections.shouldContainExactly
 import io.kotlintest.specs.StringSpec
