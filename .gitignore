@@ -7,3 +7,5 @@ gradlew.bat
 out
 build
 .kotlintest
+
+.DS_Store
