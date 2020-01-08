@@ -9,10 +9,10 @@ fun quickSort(numbers: IntArray) {
 private fun sort(numbers: IntArray, low: Int, high: Int) {
     if (low < high) {
         val pivotIndex = partition(numbers, low, high)
-        if (low + 2 < pivotIndex)
+        if (low + 1 < pivotIndex)
             sort(numbers, low, pivotIndex)
 
-        if (pivotIndex + 2 < high)
+        if (pivotIndex + 1 < high)
             sort(numbers, pivotIndex + 1, high)
     }
 }
@@ -28,7 +28,10 @@ private fun partition(numbers: IntArray, low: Int, high: Int): Int {
         while (numbers[l] < pivot) l++
         while (numbers[h] > pivot) h--
 
-        numbers.swap(l, h)
+        if (l != h) {
+            numbers.swap(l, h)
+            println("sw ${numbers.toList()} l=$low h=$high")
+        }
     }
 
     return h
@@ -42,11 +45,13 @@ fun medianOfThree(numbers: IntArray, low: Int, high: Int): Int {
 
     if (numbers[low] > numbers[mid]) numbers.swap(low, mid)
 
+    println("m3 ${numbers.toList()} l=$low h=$high")
+
     return numbers[mid]
 }
 
 fun main() {
-    val numbers = intArrayOf(7, 2, 4, 3, 0, 5, 8, 6, 1, 9, 10)
+    val numbers = intArrayOf(7, 2, 4, 3, 0, 5, 1)
     quickSort(numbers)
     println(numbers.toList())
 }

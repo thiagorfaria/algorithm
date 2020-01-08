@@ -27,6 +27,7 @@ class QuickSortTest : StringSpec({
             row(intArrayOf(2, 3, 1), listOf(1, 2, 3)),
             row(intArrayOf(3, 1, 2), listOf(1, 2, 3)),
             row(intArrayOf(3, 2, 1), listOf(1, 2, 3)),
+            row(intArrayOf(7, 2, 4, 3, 0, 5, 1), listOf(0, 1, 2, 3, 4, 5, 7)),
             row(intArrayOf(2, 8, 5, 3, 9, 4, 1), listOf(1, 2, 3, 4, 5, 8, 9))
         )
         { numbers, result ->
